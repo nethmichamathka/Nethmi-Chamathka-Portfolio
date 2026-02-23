@@ -298,7 +298,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .footer .logo__text { color: #f0e6db; }
 .nav__menu {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   align-items: center;
   gap: 0.35rem;
   list-style: none;
@@ -307,6 +308,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .nav__menu li {
   display: inline-flex;
+  float: none;
 }
 .nav__link {
   font-family: var(--font-body);
