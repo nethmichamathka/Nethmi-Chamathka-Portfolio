@@ -7,15 +7,22 @@
   <meta name="description" content="Portfolio of Nethmi Chamathka — Software Engineer, UI/UX Designer, and Full Stack Developer." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- ============ CURSOR GLOW ============ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <!-- ============ NAVIGATION ============ -->
   <header id="header">
-    <nav class="nav container">
-      <a href="#home" class="nav__logo">NC<span>.</span></a>
+    <nav class="nav">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-icon">N</span>
+        <span class="nav__logo-text">Nethmi.</span>
+      </a>
       <ul class="nav__list" id="navList">
         <li><a href="#home" class="nav__link active">Home</a></li>
         <li><a href="#about" class="nav__link">About</a></li>
@@ -24,64 +31,110 @@
         <li><a href="#projects" class="nav__link">Projects</a></li>
         <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav__right">
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <!-- ============ HERO ============ -->
   <section id="home" class="hero">
-    <div class="hero__bg-shapes">
-      <div class="hero__shape hero__shape--1"></div>
-      <div class="hero__shape hero__shape--2"></div>
-    </div>
-    <div class="container hero__grid">
+    <div class="hero__container">
       <div class="hero__content" data-animate="fade-up">
-        <p class="hero__greeting">Hello, I'm</p>
-        <h1 class="hero__name">Nethmi<br />Chamathka</h1>
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero__name">
+          <span class="hero__line"><span class="hero__word">Nethmi</span></span>
+          <span class="hero__line"><span class="hero__word">Chamathka<span class="hero__accent">.</span></span></span>
+        </h1>
         <p class="hero__title">Software Engineer &amp; Designer</p>
-        <p class="hero__desc">Fourth-year IT Undergraduate at SLIIT. Skilled in programming, UI/UX, and Full Stack development. Passionate about creating intuitive designs and building innovative solutions.</p>
+        <p class="hero__desc">Fourth-year IT Undergraduate at SLIIT — crafting elegant digital experiences through code and design.</p>
         <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">View My Work</a>
-          <a href="#contact" class="btn btn--outline">Get in Touch</a>
-        </div>
-        <div class="hero__socials">
-          <a href="https://github.com/nethmichamathka" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:chamathkanethmi11@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#projects" class="btn btn--primary">
+            <span>View Projects</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn--ghost">Say Hello</a>
         </div>
       </div>
-      <div class="hero__image-wrapper" data-animate="fade-left">
-        <div class="hero__image-frame">
-          <img src="https://lambent-peony-15176e.netlify.app/images/profile.jpg" alt="Nethmi Chamathka" class="hero__image" />
+      <div class="hero__visual" data-animate="fade-left">
+        <div class="hero__card">
+          <div class="hero__card-img">
+            <img src="https://lambent-peony-15176e.netlify.app/images/profile.jpg" alt="Nethmi Chamathka" />
+          </div>
+          <div class="hero__card-info">
+            <span class="hero__card-name">Nethmi Chamathka</span>
+            <span class="hero__card-role">Full Stack Developer</span>
+          </div>
+          <div class="hero__card-stats">
+            <div><strong>4+</strong><span>Years</span></div>
+            <div><strong>11+</strong><span>Projects</span></div>
+            <div><strong>4</strong><span>Certs</span></div>
+          </div>
         </div>
+        <div class="hero__float hero__float--1"><i class="fa-brands fa-react"></i></div>
+        <div class="hero__float hero__float--2"><i class="fa-brands fa-figma"></i></div>
+        <div class="hero__float hero__float--3"><i class="fa-brands fa-node-js"></i></div>
       </div>
+    </div>
+
+    <!-- Side socials -->
+    <div class="hero__side">
+      <div class="hero__side-line"></div>
+      <a href="https://github.com/nethmichamathka" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:chamathkanethmi11@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
     </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section id="about" class="section about">
+  <section id="about" class="section">
     <div class="container">
-      <h2 class="section__title" data-animate="fade-up">About Me</h2>
-      <p class="section__subtitle" data-animate="fade-up">Software Engineer &amp; Designer</p>
-      <div class="about__grid">
-        <div class="about__text" data-animate="fade-up">
-          <p>I'm a fourth-year IT undergraduate at SLIIT with a passion for creating seamless digital experiences. I specialize in Full Stack development using the MERN stack, building responsive web applications with modern technologies.</p>
-          <p>My expertise spans UI/UX design using Figma and Adobe XD, mobile app development with Android Studio and Kotlin, and web development with React, Next.js, and Tailwind CSS. I'm passionate about illustration and continuously learning Adobe Photoshop and Adobe XD.</p>
+      <div class="section-label" data-animate="fade-up">
+        <span class="section-label__num">01</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__text">About</span>
+      </div>
+      <div class="about">
+        <div class="about__left" data-animate="fade-up">
+          <h2 class="about__heading">Turning ideas into<br /><em>elegant</em> digital experiences</h2>
         </div>
-        <div class="about__stats" data-animate="fade-up">
-          <div class="stat">
-            <span class="stat__number" data-count="4">0</span>
-            <span class="stat__label">Years Experience</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number" data-count="8">0</span>
-            <span class="stat__label">Projects Completed</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number" data-count="4">0</span>
-            <span class="stat__label">Certificates</span>
+        <div class="about__right" data-animate="fade-up">
+          <p>I'm a fourth-year IT undergraduate at SLIIT with a passion for creating seamless digital experiences. I specialize in Full Stack development using the MERN stack, building responsive web applications with modern technologies.</p>
+          <p>My expertise spans UI/UX design using Figma and Adobe XD, mobile app development with Android Studio and Kotlin, and web development with React, Next.js, and Tailwind CSS.</p>
+          <div class="marquee">
+            <div class="marquee__track">
+              <span>React</span><span class="marquee__dot">·</span>
+              <span>Next.js</span><span class="marquee__dot">·</span>
+              <span>Node.js</span><span class="marquee__dot">·</span>
+              <span>TypeScript</span><span class="marquee__dot">·</span>
+              <span>Figma</span><span class="marquee__dot">·</span>
+              <span>Kotlin</span><span class="marquee__dot">·</span>
+              <span>Spring Boot</span><span class="marquee__dot">·</span>
+              <span>MongoDB</span><span class="marquee__dot">·</span>
+              <span>Python</span><span class="marquee__dot">·</span>
+              <span>UI/UX</span><span class="marquee__dot">·</span>
+              <span>React</span><span class="marquee__dot">·</span>
+              <span>Next.js</span><span class="marquee__dot">·</span>
+              <span>Node.js</span><span class="marquee__dot">·</span>
+              <span>TypeScript</span><span class="marquee__dot">·</span>
+              <span>Figma</span><span class="marquee__dot">·</span>
+              <span>Kotlin</span><span class="marquee__dot">·</span>
+              <span>Spring Boot</span><span class="marquee__dot">·</span>
+              <span>MongoDB</span><span class="marquee__dot">·</span>
+              <span>Python</span><span class="marquee__dot">·</span>
+              <span>UI/UX</span><span class="marquee__dot">·</span>
+            </div>
           </div>
         </div>
       </div>
@@ -89,119 +142,108 @@
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
-  <section id="experience" class="section experience">
+  <section id="experience" class="section section--alt">
     <div class="container">
-      <h2 class="section__title" data-animate="fade-up">Work Experience</h2>
-      <div class="timeline" data-animate="fade-up">
-        <div class="timeline__item">
-          <div class="timeline__dot"></div>
-          <div class="timeline__card">
-            <span class="timeline__date">July 2025 – Present</span>
-            <h3 class="timeline__role">Business Analyst Trainee</h3>
-            <h4 class="timeline__company">Informatics International Ltd</h4>
-            <ul class="timeline__list">
-              <li>Gathering and analyzing business requirements from stakeholders to support project objectives</li>
-              <li>Creating detailed documentation including business requirement specifications, user stories, and process flows</li>
-              <li>Collaborating with cross-functional teams including developers, designers, and project managers</li>
-              <li>Conducting gap analysis to identify areas for process improvement and system optimization</li>
-              <li>Participating in system testing, user acceptance testing (UAT), and quality assurance activities</li>
-              <li>Facilitating meetings and workshops with stakeholders to gather insights and validate requirements</li>
-            </ul>
-            <div class="timeline__tags">
-              <span>Requirements Analysis</span>
-              <span>Business Process Mapping</span>
-              <span>Stakeholder Management</span>
-              <span>Documentation</span>
-              <span>UAT</span>
-            </div>
+      <div class="section-label" data-animate="fade-up">
+        <span class="section-label__num">02</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__text">Experience</span>
+      </div>
+      <div class="exp" data-animate="fade-up">
+        <div class="exp__header">
+          <div class="exp__dates">
+            <span>Jul 2025</span>
+            <span class="exp__dash">—</span>
+            <span class="exp__current">Present</span>
           </div>
+          <span class="exp__live"><span class="exp__live-dot"></span> Active</span>
+        </div>
+        <h3 class="exp__role">Business Analyst Trainee</h3>
+        <h4 class="exp__company">Informatics International Ltd</h4>
+        <ul class="exp__list">
+          <li>Gathering and analyzing business requirements from stakeholders</li>
+          <li>Creating detailed documentation — BRS, user stories, and process flows</li>
+          <li>Collaborating with cross-functional teams (developers, designers, PMs)</li>
+          <li>Conducting gap analysis for process improvement and system optimization</li>
+          <li>Participating in UAT and quality assurance activities</li>
+          <li>Facilitating stakeholder meetings and workshops</li>
+        </ul>
+        <div class="exp__tags">
+          <span>Requirements Analysis</span>
+          <span>Business Process Mapping</span>
+          <span>Stakeholder Management</span>
+          <span>Documentation</span>
+          <span>UAT</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ DESIGN PORTFOLIO ============ -->
-  <section class="section design-cta">
+  <!-- ============ DESIGN PORTFOLIO BANNER ============ -->
+  <section class="banner" data-animate="fade-up">
     <div class="container">
-      <div class="design-cta__card" data-animate="fade-up">
-        <div class="design-cta__content">
-          <h2>Graphics &amp; Illustrations</h2>
-          <p>Explore my creative design work — UI/UX designs, digital art, and visual storytelling.</p>
-          <a href="https://chamathkanethportfolio.my.canva.site/" target="_blank" rel="noopener" class="btn btn--primary">
-            <i class="fa-solid fa-palette"></i> View Design Portfolio
-          </a>
+      <div class="banner__inner">
+        <div>
+          <h3>Graphics &amp; Illustrations</h3>
+          <p>Explore my creative work — UI/UX designs, digital art, and visual storytelling.</p>
         </div>
+        <a href="https://chamathkanethportfolio.my.canva.site/" target="_blank" rel="noopener" class="btn btn--light">
+          <i class="fa-solid fa-palette"></i>
+          <span>View Design Portfolio</span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ============ SKILLS ============ -->
-  <section id="skills" class="section skills">
+  <section id="skills" class="section">
     <div class="container">
-      <h2 class="section__title" data-animate="fade-up">Skills &amp; Expertise</h2>
-      <div class="skills__grid">
+      <div class="section-label" data-animate="fade-up">
+        <span class="section-label__num">03</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__text">Skills</span>
+      </div>
 
-        <div class="skills__card" data-animate="fade-up">
-          <div class="skills__card-icon"><i class="fa-solid fa-code"></i></div>
-          <h3>Development</h3>
-          <div class="skills__bars">
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>JavaScript / TypeScript</span><span>90%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="90"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>React / Next.js</span><span>90%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="90"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>Node.js / Express</span><span>85%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="85"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>Python / Flask</span><span>80%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="80"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>Kotlin / Android Studio</span><span>85%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="85"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>Java / Spring Boot</span><span>80%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="80"></div></div>
-            </div>
+      <div class="bento" data-animate="fade-up">
+
+        <div class="bento__item bento__item--wide">
+          <div class="bento__head">
+            <div class="bento__icon"><i class="fa-solid fa-terminal"></i></div>
+            <h3>Development</h3>
+          </div>
+          <div class="bento__bars">
+            <div class="bar"><div class="bar__top"><span>JavaScript / TypeScript</span><span>90%</span></div><div class="bar__track"><div class="bar__fill" data-w="90"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>React / Next.js</span><span>90%</span></div><div class="bar__track"><div class="bar__fill" data-w="90"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Node.js / Express</span><span>85%</span></div><div class="bar__track"><div class="bar__fill" data-w="85"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Python / Flask</span><span>80%</span></div><div class="bar__track"><div class="bar__fill" data-w="80"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Kotlin / Android Studio</span><span>85%</span></div><div class="bar__track"><div class="bar__fill" data-w="85"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Java / Spring Boot</span><span>80%</span></div><div class="bar__track"><div class="bar__fill" data-w="80"></div></div></div>
           </div>
         </div>
 
-        <div class="skills__card" data-animate="fade-up">
-          <div class="skills__card-icon"><i class="fa-solid fa-pen-nib"></i></div>
-          <h3>Design</h3>
-          <div class="skills__bars">
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>UI/UX Design</span><span>90%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="90"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>Figma / Adobe XD</span><span>85%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="85"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>Adobe Photoshop</span><span>80%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="80"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-bar__info"><span>Prototyping</span><span>85%</span></div>
-              <div class="skill-bar__track"><div class="skill-bar__fill" data-width="85"></div></div>
-            </div>
+        <div class="bento__item">
+          <div class="bento__head">
+            <div class="bento__icon"><i class="fa-solid fa-pen-ruler"></i></div>
+            <h3>Design</h3>
+          </div>
+          <div class="bento__bars">
+            <div class="bar"><div class="bar__top"><span>UI/UX Design</span><span>90%</span></div><div class="bar__track"><div class="bar__fill" data-w="90"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Figma / Adobe XD</span><span>85%</span></div><div class="bar__track"><div class="bar__fill" data-w="85"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Adobe Photoshop</span><span>80%</span></div><div class="bar__track"><div class="bar__fill" data-w="80"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Prototyping</span><span>85%</span></div><div class="bar__track"><div class="bar__fill" data-w="85"></div></div></div>
           </div>
         </div>
 
-        <div class="skills__card" data-animate="fade-up">
-          <div class="skills__card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-          <h3>Tools &amp; Technologies</h3>
-          <div class="skills__tags">
-            <span>Git</span><span>MongoDB</span><span>MySQL</span><span>REST API</span>
-            <span>Tailwind CSS</span><span>Bootstrap</span><span>PHP</span>
-            <span>Android Studio</span><span>Spring Boot</span><span>Java</span>
+        <div class="bento__item">
+          <div class="bento__head">
+            <div class="bento__icon"><i class="fa-solid fa-wrench"></i></div>
+            <h3>Tools &amp; Tech</h3>
+          </div>
+          <div class="bento__chips">
+            <span>Git</span><span>MongoDB</span><span>MySQL</span>
+            <span>REST API</span><span>Tailwind CSS</span><span>Bootstrap</span>
+            <span>PHP</span><span>Android Studio</span><span>Spring Boot</span><span>Java</span>
           </div>
         </div>
 
@@ -210,232 +252,162 @@
   </section>
 
   <!-- ============ PROJECTS ============ -->
-  <section id="projects" class="section projects">
+  <section id="projects" class="section section--alt">
     <div class="container">
-      <h2 class="section__title" data-animate="fade-up">Featured Projects</h2>
-
-      <div class="projects__filters" data-animate="fade-up">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-        <button class="filter-btn" data-filter="design">Design</button>
-        <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <div class="section-label" data-animate="fade-up">
+        <span class="section-label__num">04</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__text">Projects</span>
       </div>
 
-      <div class="projects__grid">
+      <div class="filters" data-animate="fade-up">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="fullstack">Full Stack</button>
+        <button class="pill" data-filter="design">Design</button>
+        <button class="pill" data-filter="mobile">Mobile</button>
+      </div>
 
-        <!-- 1 -->
-        <article class="project-card" data-category="fullstack" data-animate="fade-up">
-          <div class="project-card__badge">Featured</div>
-          <div class="project-card__body">
-            <h3>Medical History Management System 🏆</h3>
-            <p>Comprehensive healthcare platform with electronic medical records, patient management, and pharmacy integration.</p>
-            <div class="project-card__tags">
-              <span>React</span><span>Node.js</span><span>MongoDB</span><span>Research</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/Viduraz/ITPM_Project" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+      <div class="proj-grid">
+        <article class="proj" data-cat="fullstack" data-animate="fade-up">
+          <div class="proj__top"><span class="proj__badge">Featured</span><a href="https://github.com/Viduraz/ITPM_Project" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Medical History Management System <span>🏆</span></h3>
+          <p>Comprehensive healthcare platform with electronic medical records, patient management, and pharmacy integration.</p>
+          <div class="proj__tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Research</span></div>
         </article>
 
-        <!-- 2 -->
-        <article class="project-card" data-category="fullstack" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>Agri-Connect Social Media</h3>
-            <p>Social networking platform for farming enthusiasts to share insights, experiences, and agricultural knowledge.</p>
-            <div class="project-card__tags">
-              <span>Spring Boot</span><span>Java</span><span>React</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/Viduraz/PAF_SLIIT" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="fullstack" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/Viduraz/PAF_SLIIT" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Agri-Connect Social Media</h3>
+          <p>Social networking platform for farming enthusiasts to share insights and agricultural knowledge.</p>
+          <div class="proj__tags"><span>Spring Boot</span><span>Java</span><span>React</span></div>
         </article>
 
-        <!-- 3 -->
-        <article class="project-card" data-category="fullstack" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>Jayasinghe Storelines E-Commerce</h3>
-            <p>Complete e-commerce platform with reviews, ratings, and inquiry management system. Built with MERN stack.</p>
-            <div class="project-card__tags">
-              <span>React</span><span>Node.js</span><span>MongoDB</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/Celon-Lanka-Bank" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="fullstack" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/Celon-Lanka-Bank" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Jayasinghe Storelines E-Commerce</h3>
+          <p>Complete e-commerce platform with reviews, ratings, and inquiry management. MERN stack.</p>
+          <div class="proj__tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
         </article>
 
-        <!-- 4 -->
-        <article class="project-card" data-category="design" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>Ceylon Lanka Bank — UI/UX</h3>
-            <p>Online banking application UI/UX design with balance viewing, money transfer, and bill payment features.</p>
-            <div class="project-card__tags">
-              <span>Figma</span><span>UI/UX</span><span>Prototyping</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/Book-Review" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="design" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/Book-Review" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Ceylon Lanka Bank — UI/UX</h3>
+          <p>Online banking application UI/UX with balance viewing, money transfer, and bill payment.</p>
+          <div class="proj__tags"><span>Figma</span><span>UI/UX</span><span>Prototyping</span></div>
         </article>
 
-        <!-- 5 -->
-        <article class="project-card" data-category="fullstack" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>Online Book Review System</h3>
-            <p>Web application for book reviews and ratings built with MERN stack and styled with Tailwind CSS.</p>
-            <div class="project-card__tags">
-              <span>React</span><span>Node.js</span><span>MongoDB</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/mimi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="fullstack" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/mimi" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Online Book Review System</h3>
+          <p>Web application for book reviews and ratings. MERN stack with Tailwind CSS.</p>
+          <div class="proj__tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
         </article>
 
-        <!-- 6 -->
-        <article class="project-card" data-category="fullstack" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>MiMi Makeup Web Application</h3>
-            <p>Dynamic makeup web application built with Next.js and styled with Tailwind CSS for responsive design.</p>
-            <div class="project-card__tags">
-              <span>Next.js</span><span>Tailwind CSS</span><span>JavaScript</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/SriTravels-figma-UI" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="fullstack" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/SriTravels-figma-UI" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>MiMi Makeup Web Application</h3>
+          <p>Dynamic makeup web application built with Next.js and Tailwind CSS.</p>
+          <div class="proj__tags"><span>Next.js</span><span>Tailwind CSS</span><span>JavaScript</span></div>
         </article>
 
-        <!-- 7 -->
-        <article class="project-card" data-category="design" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>Sri Travels App UI Design</h3>
-            <p>Travel guide app UI for Sri Lanka with destination exploration and favorite places feature.</p>
-            <div class="project-card__tags">
-              <span>Figma</span><span>UI Design</span><span>Mobile</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/Water-Reminder-App" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="design" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/Water-Reminder-App" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Sri Travels App UI Design</h3>
+          <p>Travel guide app UI for Sri Lanka with destination exploration features.</p>
+          <div class="proj__tags"><span>Figma</span><span>UI Design</span><span>Mobile</span></div>
         </article>
 
-        <!-- 8 -->
-        <article class="project-card" data-category="mobile" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>Water Reminder App</h3>
-            <p>Android mobile application built with Kotlin in Android Studio to remind users to stay hydrated.</p>
-            <div class="project-card__tags">
-              <span>Kotlin</span><span>Android Studio</span><span>Mobile</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/Studio-Udeshan" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="mobile" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/Studio-Udeshan" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Water Reminder App</h3>
+          <p>Android app built with Kotlin to remind users to stay hydrated.</p>
+          <div class="proj__tags"><span>Kotlin</span><span>Android Studio</span><span>Mobile</span></div>
         </article>
 
-        <!-- 9 -->
-        <article class="project-card" data-category="fullstack" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>Studio Udeshan</h3>
-            <p>Music studio promotional web application built with Python Flask backend, HTML/CSS/JavaScript frontend.</p>
-            <div class="project-card__tags">
-              <span>Python</span><span>Flask</span><span>JavaScript</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/Blood-Donation-System" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="fullstack" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/Blood-Donation-System" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Studio Udeshan</h3>
+          <p>Music studio promotional web app with Python Flask backend.</p>
+          <div class="proj__tags"><span>Python</span><span>Flask</span><span>JavaScript</span></div>
         </article>
 
-        <!-- 10 -->
-        <article class="project-card" data-category="fullstack" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>Blood Donation System</h3>
-            <p>Online platform connecting blood donors with recipients. Built with HTML, CSS, JavaScript, and PHP backend.</p>
-            <div class="project-card__tags">
-              <span>HTML/CSS</span><span>JavaScript</span><span>PHP</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/SwiftBurgers" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="fullstack" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/SwiftBurgers" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>Blood Donation System</h3>
+          <p>Platform connecting blood donors with recipients. HTML/CSS, JS, PHP.</p>
+          <div class="proj__tags"><span>HTML/CSS</span><span>JavaScript</span><span>PHP</span></div>
         </article>
 
-        <!-- 11 -->
-        <article class="project-card" data-category="fullstack" data-animate="fade-up">
-          <div class="project-card__body">
-            <h3>SwiftBurgers</h3>
-            <p>Modern burger restaurant web application built with TypeScript for enhanced type safety and scalability.</p>
-            <div class="project-card__tags">
-              <span>TypeScript</span><span>React</span><span>Web App</span>
-            </div>
-          </div>
-          <div class="project-card__actions">
-            <a href="https://github.com/nethmichamathka/SwiftBurgers" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-          </div>
+        <article class="proj" data-cat="fullstack" data-animate="fade-up">
+          <div class="proj__top"><a href="https://github.com/nethmichamathka/SwiftBurgers" target="_blank" rel="noopener" class="proj__gh"><i class="fa-brands fa-github"></i></a></div>
+          <h3>SwiftBurgers</h3>
+          <p>Modern burger restaurant web app with TypeScript for type safety.</p>
+          <div class="proj__tags"><span>TypeScript</span><span>React</span><span>Web App</span></div>
         </article>
-
       </div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section contact">
+  <section id="contact" class="section">
     <div class="container">
-      <h2 class="section__title" data-animate="fade-up">Get In Touch</h2>
-      <p class="section__subtitle" data-animate="fade-up">Have a project in mind or just want to chat? Feel free to reach out!</p>
-
-      <div class="contact__grid" data-animate="fade-up">
-        <a href="mailto:chamathkanethmi11@gmail.com" class="contact__card">
-          <i class="fa-solid fa-envelope"></i>
-          <h4>Email</h4>
-          <span>chamathkanethmi11@gmail.com</span>
-        </a>
-        <a href="tel:+94784473989" class="contact__card">
-          <i class="fa-solid fa-phone"></i>
-          <h4>Phone</h4>
-          <span>+94 78 447 3989</span>
-        </a>
-        <div class="contact__card">
-          <i class="fa-solid fa-location-dot"></i>
-          <h4>Location</h4>
-          <span>Kadawatha, Sri Lanka</span>
-        </div>
-        <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener" class="contact__card">
-          <i class="fa-brands fa-linkedin-in"></i>
-          <h4>LinkedIn</h4>
-          <span>in/nethchamathka</span>
-        </a>
+      <div class="section-label" data-animate="fade-up">
+        <span class="section-label__num">05</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__text">Contact</span>
       </div>
 
-      <div class="contact__cta" data-animate="fade-up">
-        <a href="https://lambent-peony-15176e.netlify.app/cv/Nethmi-Chamathka-CV.pdf" target="_blank" rel="noopener" class="btn btn--primary">
-          <i class="fa-solid fa-download"></i> Download CV
-        </a>
+      <div class="contact" data-animate="fade-up">
+        <div class="contact__left">
+          <h2>Let's work<br /><em>together.</em></h2>
+          <p>Have a project in mind or just want to chat? I'd love to hear from you.</p>
+          <a href="https://lambent-peony-15176e.netlify.app/cv/Nethmi-Chamathka-CV.pdf" target="_blank" rel="noopener" class="btn btn--primary">
+            <i class="fa-solid fa-download"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+        <div class="contact__right">
+          <a href="mailto:chamathkanethmi11@gmail.com" class="ctile">
+            <i class="fa-solid fa-envelope"></i>
+            <div><strong>Email</strong><span>chamathkanethmi11@gmail.com</span></div>
+            <i class="fa-solid fa-arrow-right ctile__arrow"></i>
+          </a>
+          <a href="tel:+94784473989" class="ctile">
+            <i class="fa-solid fa-phone"></i>
+            <div><strong>Phone</strong><span>+94 78 447 3989</span></div>
+            <i class="fa-solid fa-arrow-right ctile__arrow"></i>
+          </a>
+          <div class="ctile">
+            <i class="fa-solid fa-location-dot"></i>
+            <div><strong>Location</strong><span>Kadawatha, Sri Lanka</span></div>
+          </div>
+          <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener" class="ctile">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <div><strong>LinkedIn</strong><span>in/nethchamathka</span></div>
+            <i class="fa-solid fa-arrow-right ctile__arrow"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <p>&copy; 2026 Nethmi Chamathka. All rights reserved.</p>
-      <div class="footer__socials">
-        <a href="https://github.com/nethmichamathka" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://chamathkanethportfolio.my.canva.site/" target="_blank" rel="noopener" aria-label="Portfolio"><i class="fa-solid fa-palette"></i></a>
-        <a href="mailto:chamathkanethmi11@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    <div class="container footer__row">
+      <div class="footer__left">
+        <span class="nav__logo-icon">N</span>
+        <p>&copy; 2026 Nethmi Chamathka</p>
+      </div>
+      <div class="footer__links">
+        <a href="https://github.com/nethmichamathka" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://chamathkanethportfolio.my.canva.site/" target="_blank" rel="noopener"><i class="fa-solid fa-palette"></i></a>
+        <a href="mailto:chamathkanethmi11@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- ============ SCROLL TO TOP ============ -->
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+  <button class="to-top" id="toTop" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
 
   <script src="script.js"></script>
 </body>

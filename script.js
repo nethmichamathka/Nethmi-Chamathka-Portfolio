@@ -1,8 +1,16 @@
-/* ===================================================
-   NETHMI CHAMATHKA PORTFOLIO — Interactions
-   =================================================== */
-
+/* ===========================================================
+   NETHMI CHAMATHKA — Portfolio v2 Interactions
+   =========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------- CURSOR GLOW ---------- */
+  const glow = document.getElementById('cursorGlow');
+  if (glow && window.innerWidth > 768) {
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+  }
 
   /* ---------- MOBILE NAV ---------- */
   const toggle = document.getElementById('navToggle');
@@ -13,122 +21,106 @@ document.addEventListener('DOMContentLoaded', () => {
     navList.classList.toggle('open');
     toggle.classList.toggle('active');
   });
-
-  navLinks.forEach(link => {
+  navLinks.forEach(link =>
     link.addEventListener('click', () => {
       navList.classList.remove('open');
       toggle.classList.remove('active');
-    });
-  });
+    })
+  );
 
-  /* ---------- ACTIVE NAV LINK ON SCROLL ---------- */
+  /* ---------- ACTIVE NAV ON SCROLL ---------- */
   const sections = document.querySelectorAll('section[id]');
-
-  function setActiveLink() {
-    const scrollY = window.scrollY + 120;
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-      const link = document.querySelector(`.nav__link[href="#${id}"]`);
-      if (link) {
-        if (scrollY >= top && scrollY < top + height) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      }
-    });
-  }
-
-  /* ---------- HEADER SCROLL STYLE ---------- */
   const header = document.getElementById('header');
+  const toTop = document.getElementById('toTop');
 
   function onScroll() {
-    header.classList.toggle('scrolled', window.scrollY > 50);
-    setActiveLink();
-    scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
-  }
+    const y = window.scrollY;
 
+    // header style
+    header.classList.toggle('scrolled', y > 60);
+
+    // scroll-to-top visibility
+    toTop.classList.toggle('visible', y > 500);
+
+    // active link
+    const offset = 150;
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const h = sec.offsetHeight;
+      const id = sec.getAttribute('id');
+      const link = document.querySelector(`.nav__link[href="#${id}"]`);
+      if (link) {
+        link.classList.toggle('active', y + offset >= top && y + offset < top + h);
+      }
+    });
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   /* ---------- SCROLL TO TOP ---------- */
-  const scrollTopBtn = document.getElementById('scrollTop');
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* ---------- SCROLL ANIMATIONS ---------- */
-  const animateElements = document.querySelectorAll('[data-animate]');
+  /* ---------- INTERSECTION ANIMATIONS ---------- */
+  const animated = document.querySelectorAll('[data-animate]');
+  const animObs = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('animated'); animObs.unobserve(e.target); }
+    }),
+    { threshold: 0.1 }
+  );
+  animated.forEach(el => animObs.observe(el));
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-        observer.unobserve(entry.target);
+  /* ---------- SKILL BARS ---------- */
+  const bars = document.querySelectorAll('.bar__fill');
+  const barObs = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.w + '%';
+        barObs.unobserve(e.target);
       }
-    });
-  }, { threshold: 0.12 });
-
-  animateElements.forEach(el => observer.observe(el));
-
-  /* ---------- SKILL BAR ANIMATION ---------- */
-  const skillBars = document.querySelectorAll('.skill-bar__fill');
-
-  const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const width = entry.target.getAttribute('data-width');
-        entry.target.style.width = width + '%';
-        barObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  skillBars.forEach(bar => barObserver.observe(bar));
-
-  /* ---------- STAT COUNTER ANIMATION ---------- */
-  const statNumbers = document.querySelectorAll('.stat__number');
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = +entry.target.getAttribute('data-count');
-        let current = 0;
-        const step = Math.ceil(target / 30);
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          entry.target.textContent = current;
-        }, 40);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNumbers.forEach(el => counterObserver.observe(el));
+    }),
+    { threshold: 0.25 }
+  );
+  bars.forEach(b => barObs.observe(b));
 
   /* ---------- PROJECT FILTER ---------- */
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const pills = document.querySelectorAll('.pill');
+  const projs = document.querySelectorAll('.proj');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const f = pill.dataset.filter;
 
-      projectCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
+      projs.forEach(card => {
+        const match = f === 'all' || card.dataset.cat === f;
+        card.classList.toggle('hidden', !match);
+
+        // re-trigger animation for visible cards
+        if (match) {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              card.style.transition = 'opacity .4s ease, transform .4s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            });
+          });
         }
       });
     });
   });
+
+  /* ---------- SMOOTH REVEAL ON HERO LOAD ---------- */
+  const heroContent = document.querySelector('.hero__content');
+  const heroVisual = document.querySelector('.hero__visual');
+  if (heroContent) {
+    setTimeout(() => heroContent.classList.add('animated'), 200);
+  }
+  if (heroVisual) {
+    setTimeout(() => heroVisual.classList.add('animated'), 500);
+  }
 
 });
