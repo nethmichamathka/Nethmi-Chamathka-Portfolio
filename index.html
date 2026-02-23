@@ -3,33 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nethmi Chamathka — Software Engineer &amp; Designer</title>
-  <meta name="description" content="Portfolio of Nethmi Chamathka — Software Engineer, UI/UX Designer, Full Stack Developer." />
+  <title>Nethmi Chamathka — Business Analyst | Software Engineer | UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Nethmi Chamathka — Business Analyst, Software Engineer, UI/UX Designer." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Cursor glow effect -->
+  <!-- Cursor Glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
 
   <!-- ========= NAVIGATION ========= -->
   <header id="header">
     <nav class="nav container">
       <a href="#hero" class="logo">
-        <span class="logo__mark">N</span>
-        <span class="logo__text">Nethmi<span class="logo__dot">.</span></span>
+        <span class="logo__mark">NC</span>
+        <span class="logo__text">Nethmi Chamathka</span>
       </a>
       <ul class="nav__menu" id="navMenu">
         <li><a href="#hero" class="nav__link active">Home</a></li>
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#experience" class="nav__link">Experience</a></li>
         <li><a href="#skills" class="nav__link">Skills</a></li>
         <li><a href="#projects" class="nav__link">Projects</a></li>
-        <li><a href="#contact" class="nav__link nav__link--cta">Let's Talk</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -51,188 +53,128 @@
           Available for opportunities
         </div>
         <h1 class="hero__heading" data-anim="up">
-          Hi, I'm <span class="gradient-text">Nethmi</span><br/>
-          <span class="hero__heading-sub">Software Engineer &amp; Designer</span>
+          Nethmi Chamathka
         </h1>
-        <p class="hero__sub" data-anim="up">Fourth-year IT Undergraduate at SLIIT. I turn complex problems into elegant, user-centric interfaces and robust full-stack applications.</p>
+        <h2 class="hero__heading-sub" data-anim="up">
+          Business Analyst <span class="hero__divider">|</span> Software Engineer <span class="hero__divider">|</span> UI/UX Designer
+        </h2>
+        <p class="hero__sub" data-anim="up">
+          Transforming ideas into innovative solutions through strategic analysis, elegant code, and user-centered design. I bridge the gap between business needs and technical excellence, creating experiences that matter.
+        </p>
         <div class="hero__btns" data-anim="up">
           <a href="#projects" class="btn btn--primary">
-            <span>View My Work</span>
+            <span>View Work</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <a href="https://lambent-peony-15176e.netlify.app/cv/Nethmi-Chamathka-CV.pdf" target="_blank" rel="noopener" class="btn btn--glass">
-            <i class="fa-solid fa-download"></i>
-            <span>Download CV</span>
+          <a href="#contact" class="btn btn--outline">
+            <span>Get In Touch</span>
           </a>
-        </div>
-        <div class="hero__social" data-anim="up">
-          <a href="https://github.com/nethmichamathka" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:chamathkanethmi11@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://chamathkanethportfolio.my.canva.site/" target="_blank" rel="noopener" aria-label="Design Portfolio"><i class="fa-solid fa-palette"></i></a>
         </div>
       </div>
       <div class="hero__visual" data-anim="fade">
         <div class="hero__card">
           <div class="hero__img-wrap">
-            <img src="profile.png" alt="Nethmi Chamathka" />
+            <img src="profile.png" alt="Nethmi Chamathka — Professional headshot" />
           </div>
           <div class="hero__card-info">
             <div class="hero__stat">
-              <span class="hero__stat-num">4+</span>
-              <span class="hero__stat-label">Years Exp.</span>
+              <span class="hero__stat-num">6+</span>
+              <span class="hero__stat-label">Years Exp</span>
             </div>
             <div class="hero__stat-divider"></div>
             <div class="hero__stat">
-              <span class="hero__stat-num">11+</span>
+              <span class="hero__stat-num">30+</span>
               <span class="hero__stat-label">Projects</span>
             </div>
             <div class="hero__stat-divider"></div>
             <div class="hero__stat">
-              <span class="hero__stat-num">4</span>
-              <span class="hero__stat-label">Certificates</span>
+              <span class="hero__stat-num">15+</span>
+              <span class="hero__stat-label">Clients</span>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="hero__scroll">
-      <span>Scroll to explore</span>
+      <span>Scroll</span>
       <div class="hero__scroll-line"></div>
     </div>
   </section>
-
-  <!-- ========= ABOUT ========= -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="sec-header" data-anim="up">
-        <span class="sec-header__tag">01 / About</span>
-        <h2 class="sec-header__title">I craft <span class="gradient-text">meaningful</span> experiences at the intersection of design &amp; code</h2>
-      </div>
-      <div class="about__grid">
-        <div class="about__card glass-card" data-anim="up">
-          <div class="about__icon"><i class="fa-solid fa-code"></i></div>
-          <h3>Full Stack Development</h3>
-          <p>Specializing in the MERN stack, building responsive web applications with React, Next.js, Node.js, and Spring Boot.</p>
-        </div>
-        <div class="about__card glass-card" data-anim="up">
-          <div class="about__icon"><i class="fa-solid fa-pen-nib"></i></div>
-          <h3>UI/UX Design</h3>
-          <p>Creating clean, intuitive, and engaging interfaces for web and mobile applications using Figma, Adobe XD, and Photoshop.</p>
-        </div>
-        <div class="about__card glass-card" data-anim="up">
-          <div class="about__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-          <h3>Mobile Development</h3>
-          <p>Building smooth, high-performance Android applications with Kotlin and Android Studio with intuitive design.</p>
-        </div>
-        <div class="about__card glass-card" data-anim="up">
-          <div class="about__icon"><i class="fa-solid fa-paintbrush"></i></div>
-          <h3>Creative Design</h3>
-          <p>Passionate about illustration using Adobe Illustrator, blending vibrant colors and clean designs to bring ideas to life.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= EXPERIENCE ========= -->
-  <section id="experience" class="section section--alt">
-    <div class="container">
-      <div class="sec-header" data-anim="up">
-        <span class="sec-header__tag">02 / Experience</span>
-        <h2 class="sec-header__title">Professional <span class="gradient-text">journey</span></h2>
-      </div>
-      <div class="exp glass-card" data-anim="up">
-        <div class="exp__timeline-dot">
-          <span class="pulse"></span>
-        </div>
-        <div class="exp__header">
-          <div>
-            <h3 class="exp__role">Business Analyst Trainee</h3>
-            <h4 class="exp__co">Informatics International Ltd</h4>
-          </div>
-          <span class="exp__date">Jul 2025 — Present</span>
-        </div>
-        <ul class="exp__duties">
-          <li>Gathering and analyzing business requirements from stakeholders to support project objectives</li>
-          <li>Creating detailed documentation — BRS, user stories, and process flows</li>
-          <li>Collaborating with cross-functional teams including developers, designers, and project managers</li>
-          <li>Conducting gap analysis to identify areas for process improvement and system optimization</li>
-          <li>Participating in system testing, UAT, and quality assurance activities</li>
-          <li>Facilitating meetings and workshops to gather insights and validate requirements</li>
-        </ul>
-        <div class="exp__chips">
-          <span>Requirements Analysis</span>
-          <span>Business Process Mapping</span>
-          <span>Stakeholder Management</span>
-          <span>Documentation</span>
-          <span>UAT</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= DESIGN PORTFOLIO BANNER ========= -->
-  <div class="banner" data-anim="up">
-    <div class="container banner__inner">
-      <div class="banner__content">
-        <span class="banner__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-        <div>
-          <h3 class="banner__title">Graphics, Illustrations &amp; Design Work</h3>
-          <p class="banner__sub">Explore my UI/UX designs, digital art, illustrations, and creative visual projects.</p>
-        </div>
-      </div>
-      <a href="https://chamathkanethportfolio.my.canva.site/" target="_blank" rel="noopener" class="btn btn--dark btn--sm">
-        <span>View Design Portfolio</span>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-      </a>
-    </div>
-  </div>
 
   <!-- ========= SKILLS ========= -->
   <section id="skills" class="section">
     <div class="container">
       <div class="sec-header" data-anim="up">
-        <span class="sec-header__tag">03 / Skills</span>
-        <h2 class="sec-header__title">My <span class="gradient-text">toolkit</span></h2>
+        <span class="sec-header__tag">01 / Expertise</span>
+        <h2 class="sec-header__title">What I <span class="gradient-text">bring to the table</span></h2>
       </div>
       <div class="skills__grid">
-        <div class="sk-card glass-card" data-anim="up">
-          <div class="sk-card__header">
-            <div class="sk-card__icon"><i class="fa-solid fa-terminal"></i></div>
-            <h3>Development</h3>
+        <!-- Business Analysis Card -->
+        <div class="skill-card" data-anim="up">
+          <div class="skill-card__glow skill-card__glow--amber"></div>
+          <div class="skill-card__icon">
+            <i class="fa-solid fa-chart-line"></i>
           </div>
-          <div class="sk-card__bars">
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">JavaScript / TypeScript</span><span class="sbar__pct">90%</span></div><div class="sbar__track"><div class="sbar__fill" data-pct="90"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">React / Next.js</span><span class="sbar__pct">90%</span></div><div class="sbar__track"><div class="sbar__fill" data-pct="90"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">Node.js / Express</span><span class="sbar__pct">85%</span></div><div class="sbar__track"><div class="sbar__fill" data-pct="85"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">Python / Flask</span><span class="sbar__pct">80%</span></div><div class="sbar__track"><div class="sbar__fill" data-pct="80"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">Kotlin / Android</span><span class="sbar__pct">85%</span></div><div class="sbar__track"><div class="sbar__fill" data-pct="85"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">Java / Spring Boot</span><span class="sbar__pct">80%</span></div><div class="sbar__track"><div class="sbar__fill" data-pct="80"></div></div></div>
-          </div>
-        </div>
-        <div class="sk-card glass-card" data-anim="up">
-          <div class="sk-card__header">
-            <div class="sk-card__icon sk-card__icon--rose"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <h3>Design</h3>
-          </div>
-          <div class="sk-card__bars">
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">UI/UX Design</span><span class="sbar__pct">90%</span></div><div class="sbar__track"><div class="sbar__fill sbar__fill--rose" data-pct="90"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">Figma / Adobe XD</span><span class="sbar__pct">85%</span></div><div class="sbar__track"><div class="sbar__fill sbar__fill--rose" data-pct="85"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">Adobe Photoshop</span><span class="sbar__pct">80%</span></div><div class="sbar__track"><div class="sbar__fill sbar__fill--rose" data-pct="80"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">Adobe Illustrator</span><span class="sbar__pct">75%</span></div><div class="sbar__track"><div class="sbar__fill sbar__fill--rose" data-pct="75"></div></div></div>
-            <div class="sbar"><div class="sbar__top"><span class="sbar__name">Prototyping</span><span class="sbar__pct">85%</span></div><div class="sbar__track"><div class="sbar__fill sbar__fill--rose" data-pct="85"></div></div></div>
+          <h3 class="skill-card__title">Business Analysis</h3>
+          <p class="skill-card__desc">
+            Translating complex business needs into actionable requirements. Expert in stakeholder management, process mapping, and delivering data-driven insights.
+          </p>
+          <ul class="skill-card__list">
+            <li>Requirements Gathering &amp; Analysis</li>
+            <li>Business Process Mapping (BPMN)</li>
+            <li>Stakeholder Management</li>
+            <li>Data Analysis &amp; Reporting</li>
+            <li>User Story Writing</li>
+            <li>GAP &amp; SWOT Analysis</li>
+          </ul>
+          <div class="skill-card__tools">
+            <span>Jira</span><span>Confluence</span><span>Power BI</span><span>Visio</span>
           </div>
         </div>
-        <div class="sk-card glass-card sk-card--wide" data-anim="up">
-          <div class="sk-card__header">
-            <div class="sk-card__icon sk-card__icon--mauve"><i class="fa-solid fa-layer-group"></i></div>
-            <h3>Tools &amp; Technologies</h3>
+
+        <!-- Software Engineering Card -->
+        <div class="skill-card" data-anim="up">
+          <div class="skill-card__glow skill-card__glow--rose"></div>
+          <div class="skill-card__icon skill-card__icon--rose">
+            <i class="fa-solid fa-code"></i>
           </div>
-          <div class="sk-card__chips">
-            <span>Git</span><span>MongoDB</span><span>MySQL</span><span>REST API</span>
-            <span>Tailwind CSS</span><span>Bootstrap</span><span>PHP</span>
-            <span>Android Studio</span><span>Spring Boot</span><span>Java</span>
-            <span>HTML5</span><span>CSS3</span><span>SASS</span><span>Canva</span>
+          <h3 class="skill-card__title">Software Engineering</h3>
+          <p class="skill-card__desc">
+            Building scalable, maintainable applications across the full stack. Proficient in modern frameworks, databases, and agile methodologies.
+          </p>
+          <ul class="skill-card__list">
+            <li>Full-Stack Web Development</li>
+            <li>RESTful API Design</li>
+            <li>Database Architecture</li>
+            <li>Mobile App Development</li>
+            <li>Version Control &amp; CI/CD</li>
+            <li>Agile / Scrum Practices</li>
+          </ul>
+          <div class="skill-card__tools">
+            <span>React</span><span>Node.js</span><span>Spring Boot</span><span>MongoDB</span>
+          </div>
+        </div>
+
+        <!-- UI/UX Design Card -->
+        <div class="skill-card" data-anim="up">
+          <div class="skill-card__glow skill-card__glow--mauve"></div>
+          <div class="skill-card__icon skill-card__icon--mauve">
+            <i class="fa-solid fa-pen-nib"></i>
+          </div>
+          <h3 class="skill-card__title">UI/UX Design</h3>
+          <p class="skill-card__desc">
+            Crafting intuitive, visually stunning interfaces that delight users. From wireframes to high-fidelity prototypes, I design experiences people love.
+          </p>
+          <ul class="skill-card__list">
+            <li>User Research &amp; Personas</li>
+            <li>Wireframing &amp; Prototyping</li>
+            <li>Interaction Design</li>
+            <li>Design Systems</li>
+            <li>Usability Testing</li>
+            <li>Responsive Design</li>
+          </ul>
+          <div class="skill-card__tools">
+            <span>Figma</span><span>Adobe XD</span><span>Photoshop</span><span>Illustrator</span>
           </div>
         </div>
       </div>
@@ -243,183 +185,242 @@
   <section id="projects" class="section section--alt">
     <div class="container">
       <div class="sec-header" data-anim="up">
-        <span class="sec-header__tag">04 / Projects</span>
-        <h2 class="sec-header__title">Featured <span class="gradient-text">work</span></h2>
+        <span class="sec-header__tag">02 / Portfolio</span>
+        <h2 class="sec-header__title">Featured <span class="gradient-text">projects</span></h2>
       </div>
 
       <div class="filters" data-anim="up">
         <button class="fbtn active" data-filter="all">All</button>
-        <button class="fbtn" data-filter="fullstack">Full Stack</button>
-        <button class="fbtn" data-filter="design">Design</button>
-        <button class="fbtn" data-filter="mobile">Mobile</button>
+        <button class="fbtn" data-filter="ba">Business Analysis</button>
+        <button class="fbtn" data-filter="se">Software Engineering</button>
+        <button class="fbtn" data-filter="uiux">UI/UX Design</button>
       </div>
 
       <div class="projects__grid">
-        <article class="pcard pcard--featured glass-card" data-cat="fullstack" data-anim="up">
-          <div class="pcard__badge">
-            <i class="fa-solid fa-trophy"></i> Featured &amp; Research Project
+        <!-- Project 1: BA -->
+        <article class="pcard glass-card" data-cat="ba" data-anim="up">
+          <div class="pcard__img-wrap">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Healthcare Analytics Dashboard" />
+            <span class="pcard__cat-badge">Business Analysis</span>
           </div>
           <div class="pcard__content">
-            <h3>Medical History Management System</h3>
-            <p>Comprehensive healthcare platform with electronic medical records, patient management, and pharmacy integration. Built as a research project.</p>
+            <h3>Healthcare Analytics Dashboard</h3>
+            <p>End-to-end business requirements analysis for a healthcare analytics platform. Delivered BRS, user stories, and process flows for a 50+ stakeholder project.</p>
             <div class="pcard__tags">
-              <span>React</span><span>Node.js</span><span>MongoDB</span><span>Research</span>
+              <span>Requirements Analysis</span><span>Power BI</span><span>BPMN</span><span>Jira</span>
             </div>
           </div>
           <div class="pcard__actions">
             <a href="https://github.com/Viduraz/ITPM_Project" target="_blank" rel="noopener" class="pcard__link">
+              <i class="fa-brands fa-github"></i> View Details
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: SE  -->
+        <article class="pcard glass-card" data-cat="se" data-anim="up">
+          <div class="pcard__img-wrap">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="Agri-Connect Social Platform" />
+            <span class="pcard__cat-badge pcard__cat-badge--rose">Software Engineering</span>
+          </div>
+          <div class="pcard__content">
+            <h3>Agri-Connect Social Platform</h3>
+            <p>Full-stack social networking platform for farming enthusiasts with real-time messaging, knowledge sharing, and community features.</p>
+            <div class="pcard__tags">
+              <span>Spring Boot</span><span>React</span><span>Java</span><span>MySQL</span>
+            </div>
+          </div>
+          <div class="pcard__actions">
+            <a href="https://github.com/Viduraz/PAF_SLIIT" target="_blank" rel="noopener" class="pcard__link">
               <i class="fa-brands fa-github"></i> View Code
             </a>
           </div>
         </article>
 
-        <article class="pcard glass-card" data-cat="fullstack" data-anim="up">
+        <!-- Project 3: UI/UX -->
+        <article class="pcard glass-card" data-cat="uiux" data-anim="up">
+          <div class="pcard__img-wrap">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&h=400&fit=crop" alt="Ceylon Lanka Bank App" />
+            <span class="pcard__cat-badge pcard__cat-badge--mauve">UI/UX Design</span>
+          </div>
           <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">Full Stack</span>
-              <a href="https://github.com/Viduraz/PAF_SLIIT" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
+            <h3>Ceylon Lanka Bank — Banking App</h3>
+            <p>Complete UI/UX design for a mobile banking application featuring balance management, transfers, bill payments, and biometric authentication.</p>
+            <div class="pcard__tags">
+              <span>Figma</span><span>Prototyping</span><span>User Research</span><span>Design System</span>
             </div>
-            <h3>Agri-Connect Social Media</h3>
-            <p>Social networking platform for farming enthusiasts to share insights and agricultural knowledge.</p>
-            <div class="pcard__tags"><span>Spring Boot</span><span>Java</span><span>React</span></div>
+          </div>
+          <div class="pcard__actions">
+            <a href="https://github.com/nethmichamathka/Celon-Lanka-Bank" target="_blank" rel="noopener" class="pcard__link">
+              <i class="fa-brands fa-github"></i> View Design
+            </a>
           </div>
         </article>
 
-        <article class="pcard glass-card" data-cat="fullstack" data-anim="up">
-          <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">Full Stack</span>
-              <a href="https://github.com/nethmichamathka/Celon-Lanka-Bank" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <h3>Jayasinghe Storelines E-Commerce</h3>
-            <p>Complete e-commerce platform with reviews, ratings, and inquiry management. Full MERN stack implementation.</p>
-            <div class="pcard__tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span></div>
+        <!-- Project 4: SE -->
+        <article class="pcard glass-card" data-cat="se" data-anim="up">
+          <div class="pcard__img-wrap">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&h=400&fit=crop" alt="Online Book Review System" />
+            <span class="pcard__cat-badge pcard__cat-badge--rose">Software Engineering</span>
           </div>
-        </article>
-
-        <article class="pcard glass-card" data-cat="design" data-anim="up">
           <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">UI/UX Design</span>
-              <a href="https://github.com/nethmichamathka/Book-Review" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <h3>Ceylon Lanka Bank — UI/UX</h3>
-            <p>Online banking app design with balance viewing, money transfer, bill payment, and phone top-up features.</p>
-            <div class="pcard__tags"><span>Figma</span><span>UI/UX</span><span>Prototyping</span></div>
-          </div>
-        </article>
-
-        <article class="pcard glass-card" data-cat="fullstack" data-anim="up">
-          <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">Full Stack</span>
-              <a href="https://github.com/nethmichamathka/mimi" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
-            </div>
             <h3>Online Book Review System</h3>
-            <p>Web application for book reviews and ratings. MERN stack with Tailwind CSS for responsive design.</p>
-            <div class="pcard__tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Tailwind</span></div>
+            <p>MERN stack web application enabling users to rate, review, and discover books with personalized recommendations and community engagement.</p>
+            <div class="pcard__tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span><span>Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="pcard__actions">
+            <a href="https://github.com/nethmichamathka/Book-Review" target="_blank" rel="noopener" class="pcard__link">
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
           </div>
         </article>
 
-        <article class="pcard glass-card" data-cat="fullstack" data-anim="up">
+        <!-- Project 5: BA -->
+        <article class="pcard glass-card" data-cat="ba" data-anim="up">
+          <div class="pcard__img-wrap">
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop" alt="Supply Chain Optimization" />
+            <span class="pcard__cat-badge">Business Analysis</span>
+          </div>
           <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">Full Stack</span>
-              <a href="https://github.com/nethmichamathka/SriTravels-figma-UI" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
+            <h3>Supply Chain Optimization Study</h3>
+            <p>Conducted comprehensive gap analysis and process re-engineering for a logistics company, resulting in 25% efficiency improvement across operations.</p>
+            <div class="pcard__tags">
+              <span>GAP Analysis</span><span>Process Mapping</span><span>Stakeholder Mgmt</span><span>Documentation</span>
             </div>
-            <h3>MiMi Makeup Web Application</h3>
-            <p>Dynamic makeup web app with modern, responsive design built with Next.js and Tailwind CSS.</p>
-            <div class="pcard__tags"><span>Next.js</span><span>Tailwind CSS</span><span>JavaScript</span></div>
+          </div>
+          <div class="pcard__actions">
+            <a href="#" class="pcard__link">
+              <i class="fa-solid fa-file-lines"></i> Case Study
+            </a>
           </div>
         </article>
 
-        <article class="pcard glass-card" data-cat="design" data-anim="up">
-          <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">UI Design</span>
-              <a href="https://github.com/nethmichamathka/Water-Reminder-App" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <h3>Sri Travels App UI Design</h3>
-            <p>Travel guide app UI for Sri Lanka with destination exploration and favorite places features.</p>
-            <div class="pcard__tags"><span>Figma</span><span>UI Design</span><span>Mobile</span></div>
+        <!-- Project 6: UI/UX -->
+        <article class="pcard glass-card" data-cat="uiux" data-anim="up">
+          <div class="pcard__img-wrap">
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop" alt="Sri Travels App" />
+            <span class="pcard__cat-badge pcard__cat-badge--mauve">UI/UX Design</span>
           </div>
-        </article>
-
-        <article class="pcard glass-card" data-cat="mobile" data-anim="up">
           <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">Mobile</span>
-              <a href="https://github.com/nethmichamathka/Studio-Udeshan" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
+            <h3>Sri Travels — Travel Guide App</h3>
+            <p>Mobile UI design for a Sri Lanka travel guide application with destination exploration, itinerary planning, and immersive visual storytelling.</p>
+            <div class="pcard__tags">
+              <span>Figma</span><span>Mobile UI</span><span>Interaction Design</span><span>User Flows</span>
             </div>
-            <h3>Water Reminder App</h3>
-            <p>Android mobile app built with Kotlin to track daily hydration with smooth performance.</p>
-            <div class="pcard__tags"><span>Kotlin</span><span>Android Studio</span><span>Mobile</span></div>
           </div>
-        </article>
-
-        <article class="pcard glass-card" data-cat="fullstack" data-anim="up">
-          <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">Full Stack</span>
-              <a href="https://github.com/nethmichamathka/Blood-Donation-System" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <h3>Studio Udeshan</h3>
-            <p>Music studio promotional web application to showcase services, portfolio, and past projects.</p>
-            <div class="pcard__tags"><span>Python</span><span>Flask</span><span>JavaScript</span></div>
-          </div>
-        </article>
-
-        <article class="pcard glass-card" data-cat="fullstack" data-anim="up">
-          <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">Full Stack</span>
-              <a href="https://github.com/nethmichamathka/SwiftBurgers" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <h3>Blood Donation System</h3>
-            <p>Web platform connecting blood donors with recipients for faster, accessible blood donation.</p>
-            <div class="pcard__tags"><span>HTML/CSS</span><span>JavaScript</span><span>PHP</span></div>
-          </div>
-        </article>
-
-        <article class="pcard glass-card" data-cat="fullstack" data-anim="up">
-          <div class="pcard__content">
-            <div class="pcard__top">
-              <span class="pcard__cat">Full Stack</span>
-              <a href="https://github.com/nethmichamathka/SwiftBurgers" target="_blank" rel="noopener" class="pcard__gh"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <h3>SwiftBurgers</h3>
-            <p>Modern burger restaurant web application with TypeScript for type safety and great UX.</p>
-            <div class="pcard__tags"><span>TypeScript</span><span>React</span><span>Web App</span></div>
+          <div class="pcard__actions">
+            <a href="https://github.com/nethmichamathka/SriTravels-figma-UI" target="_blank" rel="noopener" class="pcard__link">
+              <i class="fa-brands fa-github"></i> View Design
+            </a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ========= CERTIFICATES ========= -->
-  <section class="section">
+  <!-- ========= ABOUT / TIMELINE ========= -->
+  <section id="about" class="section">
     <div class="container">
       <div class="sec-header" data-anim="up">
-        <span class="sec-header__tag">05 / Certificates</span>
-        <h2 class="sec-header__title">Continuous <span class="gradient-text">learning</span></h2>
+        <span class="sec-header__tag">03 / About</span>
+        <h2 class="sec-header__title">My professional <span class="gradient-text">journey</span></h2>
       </div>
-      <div class="certs__grid">
-        <div class="cert glass-card" data-anim="up">
+
+      <!-- Stats Row -->
+      <div class="about-stats" data-anim="up">
+        <div class="about-stat glass-card">
+          <span class="about-stat__num" data-count="30">0</span>
+          <span class="about-stat__label">Projects Completed</span>
+        </div>
+        <div class="about-stat glass-card">
+          <span class="about-stat__num" data-count="15">0</span>
+          <span class="about-stat__label">Happy Clients</span>
+        </div>
+        <div class="about-stat glass-card">
+          <span class="about-stat__num" data-count="6">0</span>
+          <span class="about-stat__label">Years of Experience</span>
+        </div>
+        <div class="about-stat glass-card">
+          <span class="about-stat__num" data-count="4">0</span>
+          <span class="about-stat__label">Certifications</span>
+        </div>
+      </div>
+
+      <!-- Narrative -->
+      <div class="about-narrative" data-anim="up">
+        <p>
+          I'm a passionate professional who thrives at the intersection of business strategy, software development, and design thinking. With a foundation rooted in analytical problem-solving and creative execution, I help organizations turn complex challenges into elegant digital solutions. My approach combines data-driven decision making with an unwavering commitment to user experience.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="timeline__line"></div>
+
+        <div class="timeline__item" data-anim="up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2024</span>
+            <h3 class="timeline__role">Business Analyst Trainee</h3>
+            <h4 class="timeline__company">Informatics International Ltd</h4>
+            <p>Leading requirements gathering, stakeholder workshops, and delivering comprehensive BRS documentation for enterprise-level projects.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" data-anim="up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2022</span>
+            <h3 class="timeline__role">Full-Stack Developer &amp; Designer</h3>
+            <h4 class="timeline__company">Freelance &amp; Academic Projects</h4>
+            <p>Built 10+ full-stack applications using MERN stack, Spring Boot, and Next.js. Designed UI/UX for mobile and web platforms with Figma.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-anim="up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2020</span>
+            <h3 class="timeline__role">BSc (Hons) in IT — Software Engineering</h3>
+            <h4 class="timeline__company">SLIIT — Sri Lanka Institute of Information Technology</h4>
+            <p>Specializing in software engineering with a focus on modern web technologies, mobile development, and research in healthcare IT systems.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" data-anim="up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card glass-card">
+            <span class="timeline__year">2018</span>
+            <h3 class="timeline__role">Began Tech Journey</h3>
+            <h4 class="timeline__company">Self-Learning &amp; Early Projects</h4>
+            <p>Started learning web development, graphic design, and programming fundamentals. Completed initial certifications and built first web projects.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="sec-header sec-header--sub" data-anim="up">
+        <h3 class="sec-header__subtitle">Certifications &amp; Credentials</h3>
+      </div>
+      <div class="certs__grid" data-anim="up">
+        <div class="cert glass-card">
           <div class="cert__icon"><i class="fa-solid fa-award"></i></div>
           <h4>Web Design for Beginners</h4>
           <span>University of Moratuwa</span>
         </div>
-        <div class="cert glass-card" data-anim="up">
+        <div class="cert glass-card">
           <div class="cert__icon"><i class="fa-solid fa-award"></i></div>
           <h4>Machine Learning for All</h4>
           <span>University of London</span>
         </div>
-        <div class="cert glass-card" data-anim="up">
+        <div class="cert glass-card">
           <div class="cert__icon"><i class="fa-solid fa-award"></i></div>
           <h4>Foundations of Project Management</h4>
           <span>University of Moratuwa</span>
         </div>
-        <div class="cert glass-card" data-anim="up">
+        <div class="cert glass-card">
           <div class="cert__icon"><i class="fa-solid fa-award"></i></div>
           <h4>UI/UX for Beginners</h4>
           <span>Great Learning</span>
@@ -432,37 +433,80 @@
   <section id="contact" class="section section--alt">
     <div class="container">
       <div class="sec-header" data-anim="up">
-        <span class="sec-header__tag">06 / Contact</span>
+        <span class="sec-header__tag">04 / Contact</span>
         <h2 class="sec-header__title">Let's work <span class="gradient-text">together</span></h2>
       </div>
 
-      <div class="contact__wrap" data-anim="up">
-        <div class="contact__intro">
+      <div class="contact__layout" data-anim="up">
+        <!-- Contact Info Side -->
+        <div class="contact__info">
           <h3>Have a project in mind?</h3>
-          <p>I'm always open to discussing product design, development work, or partnership opportunities. Let's build something great together.</p>
-        </div>
-        <div class="contact__grid">
-          <a href="mailto:chamathkanethmi11@gmail.com" class="ccard glass-card">
-            <div class="ccard__icon"><i class="fa-solid fa-envelope"></i></div>
-            <strong>Email</strong>
-            <span>chamathkanethmi11@gmail.com</span>
-          </a>
-          <a href="tel:+94784473989" class="ccard glass-card">
-            <div class="ccard__icon"><i class="fa-solid fa-phone"></i></div>
-            <strong>Phone</strong>
-            <span>+94 78 447 3989</span>
-          </a>
-          <div class="ccard glass-card">
-            <div class="ccard__icon"><i class="fa-solid fa-location-dot"></i></div>
-            <strong>Location</strong>
-            <span>Kadawatha, Sri Lanka</span>
+          <p>I'm always open to discussing product design, business analysis, development work, or partnership opportunities. Let's build something great together.</p>
+
+          <div class="contact__details">
+            <a href="mailto:chamathkanethmi11@gmail.com" class="contact__detail-item">
+              <div class="contact__detail-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <strong>Email</strong>
+                <span>chamathkanethmi11@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+94784473989" class="contact__detail-item">
+              <div class="contact__detail-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <strong>Phone</strong>
+                <span>+94 78 447 3989</span>
+              </div>
+            </a>
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <strong>Location</strong>
+                <span>Kadawatha, Sri Lanka</span>
+              </div>
+            </div>
           </div>
-          <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener" class="ccard glass-card">
-            <div class="ccard__icon"><i class="fa-brands fa-linkedin-in"></i></div>
-            <strong>LinkedIn</strong>
-            <span>in/nethchamathka</span>
-          </a>
+
+          <div class="contact__socials">
+            <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/nethmichamathka" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:chamathkanethmi11@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
         </div>
+
+        <!-- Contact Form -->
+        <form class="contact__form glass-card" id="contactForm" novalidate>
+          <div class="form__group">
+            <label for="formName">Full Name</label>
+            <input type="text" id="formName" name="name" placeholder="Your name" required />
+            <span class="form__error" id="nameError"></span>
+          </div>
+          <div class="form__group">
+            <label for="formEmail">Email Address</label>
+            <input type="email" id="formEmail" name="email" placeholder="you@example.com" required />
+            <span class="form__error" id="emailError"></span>
+          </div>
+          <div class="form__group">
+            <label for="formSubject">Subject</label>
+            <input type="text" id="formSubject" name="subject" placeholder="Project inquiry" required />
+            <span class="form__error" id="subjectError"></span>
+          </div>
+          <div class="form__group">
+            <label for="formMessage">Message</label>
+            <textarea id="formMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <span class="form__error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            <span>Send Message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
       </div>
     </div>
   </section>
@@ -470,18 +514,37 @@
   <!-- ========= FOOTER ========= -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__left">
-        <a href="#hero" class="logo logo--footer">
-          <span class="logo__mark">N</span>
-          <span class="logo__text">Nethmi<span class="logo__dot">.</span></span>
-        </a>
-        <p>&copy; 2026 Nethmi Chamathka. All rights reserved.</p>
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#hero" class="logo logo--footer">
+            <span class="logo__mark">NC</span>
+            <span class="logo__text">Nethmi Chamathka</span>
+          </a>
+          <p class="footer__tagline">Business Analyst | Software Engineer | UI/UX Designer</p>
+        </div>
+        <div class="footer__nav">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__social">
+          <h4>Connect</h4>
+          <div class="footer__links">
+            <a href="https://github.com/nethmichamathka" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://chamathkanethportfolio.my.canva.site/" target="_blank" rel="noopener" aria-label="Design Portfolio"><i class="fa-solid fa-palette"></i></a>
+            <a href="mailto:chamathkanethmi11@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="footer__links">
-        <a href="https://github.com/nethmichamathka" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/nethchamathka" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://chamathkanethportfolio.my.canva.site/" target="_blank" rel="noopener"><i class="fa-solid fa-palette"></i></a>
-        <a href="mailto:chamathkanethmi11@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Nethmi Chamathka. All rights reserved.</p>
+        <p>Designed &amp; Built with <i class="fa-solid fa-heart" style="color: var(--rose);"></i></p>
       </div>
     </div>
   </footer>
