@@ -295,6 +295,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   color: var(--text);
 }
 .footer .logo__text { color: #f0e6db; }
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
 .nav__link {
   font-family: var(--font-body);
   font-size: 0.8rem;
