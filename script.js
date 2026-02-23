@@ -1,106 +1,88 @@
 /* ===========================================================
-   NETHMI CHAMATHKA — Portfolio v2 Interactions
+   NETHMI CHAMATHKA — Corporate Portfolio JS
    =========================================================== */
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- CURSOR GLOW ---------- */
-  const glow = document.getElementById('cursorGlow');
-  if (glow && window.innerWidth > 768) {
-    document.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    });
-  }
-
-  /* ---------- MOBILE NAV ---------- */
-  const toggle = document.getElementById('navToggle');
-  const navList = document.getElementById('navList');
+  /* ---- MOBILE NAV ---- */
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
   const navLinks = document.querySelectorAll('.nav__link');
 
-  toggle.addEventListener('click', () => {
-    navList.classList.toggle('open');
-    toggle.classList.toggle('active');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    hamburger.classList.toggle('active');
   });
-  navLinks.forEach(link =>
-    link.addEventListener('click', () => {
-      navList.classList.remove('open');
-      toggle.classList.remove('active');
-    })
-  );
+  navLinks.forEach(l => l.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+  }));
 
-  /* ---------- ACTIVE NAV ON SCROLL ---------- */
-  const sections = document.querySelectorAll('section[id]');
+  /* ---- HEADER SCROLL ---- */
   const header = document.getElementById('header');
-  const toTop = document.getElementById('toTop');
+  const totop = document.getElementById('totop');
+  const sections = document.querySelectorAll('section[id]');
 
   function onScroll() {
     const y = window.scrollY;
-
-    // header style
     header.classList.toggle('scrolled', y > 60);
+    totop.classList.toggle('visible', y > 500);
 
-    // scroll-to-top visibility
-    toTop.classList.toggle('visible', y > 500);
-
-    // active link
-    const offset = 150;
+    // active nav link
     sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const h = sec.offsetHeight;
+      const top = sec.offsetTop - 160;
+      const bot = top + sec.offsetHeight;
       const id = sec.getAttribute('id');
       const link = document.querySelector(`.nav__link[href="#${id}"]`);
-      if (link) {
-        link.classList.toggle('active', y + offset >= top && y + offset < top + h);
-      }
+      if (link) link.classList.toggle('active', y >= top && y < bot);
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------- SCROLL TO TOP ---------- */
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  /* ---- SCROLL TO TOP ---- */
+  totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* ---------- INTERSECTION ANIMATIONS ---------- */
-  const animated = document.querySelectorAll('[data-animate]');
-  const animObs = new IntersectionObserver(
-    entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('animated'); animObs.unobserve(e.target); }
-    }),
-    { threshold: 0.1 }
-  );
-  animated.forEach(el => animObs.observe(el));
-
-  /* ---------- SKILL BARS ---------- */
-  const bars = document.querySelectorAll('.bar__fill');
-  const barObs = new IntersectionObserver(
-    entries => entries.forEach(e => {
+  /* ---- SCROLL REVEAL ---- */
+  const els = document.querySelectorAll('[data-anim]');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.style.width = e.target.dataset.w + '%';
+        e.target.classList.add('in');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => revealObs.observe(el));
+
+  /* ---- SKILL BARS ---- */
+  const fills = document.querySelectorAll('.sbar__fill');
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.pct + '%';
         barObs.unobserve(e.target);
       }
-    }),
-    { threshold: 0.25 }
-  );
-  bars.forEach(b => barObs.observe(b));
+    });
+  }, { threshold: 0.2 });
+  fills.forEach(f => barObs.observe(f));
 
-  /* ---------- PROJECT FILTER ---------- */
-  const pills = document.querySelectorAll('.pill');
-  const projs = document.querySelectorAll('.proj');
+  /* ---- PROJECT FILTER ---- */
+  const fbtns = document.querySelectorAll('.fbtn');
+  const pcards = document.querySelectorAll('.pcard');
 
-  pills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      pills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      const f = pill.dataset.filter;
+  fbtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      fbtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
 
-      projs.forEach(card => {
-        const match = f === 'all' || card.dataset.cat === f;
-        card.classList.toggle('hidden', !match);
+      pcards.forEach(card => {
+        const show = filter === 'all' || card.dataset.cat === filter;
+        card.classList.toggle('hidden', !show);
 
-        // re-trigger animation for visible cards
-        if (match) {
+        if (show) {
           card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
+          card.style.transform = 'translateY(16px)';
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
               card.style.transition = 'opacity .4s ease, transform .4s ease';
@@ -113,14 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- SMOOTH REVEAL ON HERO LOAD ---------- */
-  const heroContent = document.querySelector('.hero__content');
-  const heroVisual = document.querySelector('.hero__visual');
-  if (heroContent) {
-    setTimeout(() => heroContent.classList.add('animated'), 200);
-  }
-  if (heroVisual) {
-    setTimeout(() => heroVisual.classList.add('animated'), 500);
-  }
+  /* ---- HERO ENTRANCE ---- */
+  const heroAnims = document.querySelectorAll('.hero [data-anim]');
+  heroAnims.forEach((el, i) => {
+    setTimeout(() => el.classList.add('in'), 200 + i * 150);
+  });
 
 });
